@@ -3,8 +3,9 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - "boards/*"
-      - "config/*"
+      - "build.yaml"
+      - "boards/**"
+      - "config/**"
     tags-ignore:
       - "*"
 
