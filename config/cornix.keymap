@@ -43,67 +43,9 @@
     // Activate ADJUST layer by pressing raise and lower
 
     behaviors {
-        hm_l: homerow_mods_left {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-
-            flavor = "balanced";
-            tapping-term-ms = <HM_TAPPING_TERM>;
-            quick-tap-ms = <200>;                // repeat on tap-into-hold
-            require-prior-idle-ms = <HM_PRIOR_IDLE>;
-            hold-trigger-key-positions = <KEYS_R KEYS_T>;
-            hold-trigger-on-release;
-        };
-
-        hm_r: homerow_mods_right {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-
-            flavor = "balanced";
-            tapping-term-ms = <HM_TAPPING_TERM>;
-            quick-tap-ms = <200>;
-            require-prior-idle-ms = <HM_PRIOR_IDLE>;
-            hold-trigger-key-positions = <KEYS_L KEYS_T>;
-            hold-trigger-on-release;
-        };
-
         // Positional Homerow mods for shift
         // Use faster tapping term and disable some features that may
         // cause false negatives.
-
-        hm_shift_l: hm_shift_l {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-
-            //flavor = "balanced";
-
-            flavor = "balanced";
-            tapping-term-ms = <HM_TAPPING_TERM_FAST>;
-            quick-tap-ms = <200>;
-            require-prior-idle-ms = <HM_PRIOR_IDLE>;
-            hold-trigger-key-positions = <KEYS_R KEYS_T>;
-            hold-trigger-on-release;
-        };
-
-        hm_shift_r: hm_shift_r {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-
-            flavor = "balanced";
-            tapping-term-ms = <HM_TAPPING_TERM_FAST>;
-            quick-tap-ms = <200>;
-            require-prior-idle-ms = <HM_PRIOR_IDLE>;
-            hold-trigger-key-positions = <KEYS_L KEYS_T>;
-
-            // for quick tapping; shift+~
-
-            hold-trigger-on-release;
-        };
-
         /*
          * Non-Positional Homerow Mods
          * Used for &mm_grescm_gui behavior on left hand.
@@ -114,23 +56,64 @@
          * Hold: LSHIFT
          */
 
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-
-            flavor = "balanced";
-            tapping-term-ms = <HM_TAPPING_TERM>;
-            quick-tap-ms = <200>;
-        };
-
-        lt: layer_tap {
+        lt140: layer_tap_140 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             bindings = <&mo>, <&kp>;
 
-            flavor = "hold-preferred";
-            tapping-term-ms = <HM_TAPPING_TERM>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <140>;
+            quick-tap-ms = <200>;
+        };
+
+        lt_150: layer_tap_150 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+
+            flavor = "tap-preferred";
+            tapping-term-ms = <150>;
+            quick-tap-ms = <200>;
+        };
+
+        lt_160: layer_tap_160 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+
+            flavor = "tap-preferred";
+            tapping-term-ms = <160>;
+            quick-tap-ms = <200>;
+            label = "LT_160";
+        };
+
+        ht_140: hold_tap_140 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "tap-preferred";
+            tapping-term-ms = <140>;
+            quick-tap-ms = <200>;
+        };
+
+        ht_150: hold_tap_150 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "tap-preferred";
+            tapping-term-ms = <150>;
+            quick-tap-ms = <200>;
+        };
+
+        ht_160: hold_tap_160 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "tap-preferred";
+            tapping-term-ms = <160>;
             quick-tap-ms = <200>;
         };
     };
@@ -190,10 +173,10 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESCAPE  &kp Q         &kp W  &kp E         &kp R                &kp T                      &kp Y      &kp U                &kp I            &kp O         &kp P             &kp BSLH
-&kp ESC     &kp A         &kp S  &kp D         &hm_shift_l LSHFT F  &kp G                      &kp H      &hm_shift_r RSHFT J  &hm_r RGUI K     &hm_r RALT L  &hm_r RCTRL SEMI  &kp SQT
-&mo 4       &hm_l LGUI Z  &kp X  &kp C         &kp V                &kp B        &none  &none  &kp N      &kp M                &kp COMMA        &kp DOT       &kp FSLH          &kp BACKSPACE
-&none       &none         &none  &lt 6 ESCAPE  &mo 2                &lt 5 SPACE                &kp ENTER  &mo 3                &lt 2 BACKSPACE  &none         &none             &none
+&kp ESCAPE    &kp Q  &kp W  &kp E            &kp R  &kp T                         &kp Y      &kp U  &kp I               &kp O    &kp P     &kp BSLH
+&kp MINUS     &kp A  &kp S  &kp D            &kp F  &kp G                         &kp H      &none  &none               &none    &none     &kp SQT
+&kp LEFT_GUI  &kp Z  &kp X  &kp C            &kp V  &kp B           &none  &none  &kp N      &kp M  &kp COMMA           &kp DOT  &kp FSLH  &kp BACKSPACE
+&none         &none  &none  &lt140 6 ESCAPE  &mo 2  &lt140 5 SPACE                &kp ENTER  &mo 3  &lt140 2 BACKSPACE  &none    &none     &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -210,10 +193,10 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&trans    &trans         &trans        &trans         &trans               &trans                  &trans  &trans               &trans         &trans        &trans            &trans
-&trans    &hm_l LCTRL A  &hm_l LALT S  &hm_l LCTRL D  &hm_shift_l LSHFT F  &trans                  &trans  &hm_shift_r RSHFT J  &hm_r RCTRL K  &hm_r RALT L  &hm_r RCTRL SEMI  &trans
-&kp LGUI  &trans         &trans        &trans         &trans               &trans  &trans  &trans  &trans  &trans               &trans         &trans        &trans            &trans
-&none     &none          &none         &trans         &trans               &trans                  &trans  &trans               &trans         &none         &none             &none
+&trans    &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans    &none   &none   &none   &none   &trans                  &trans  &none   &none   &none   &none   &trans
+&kp LGUI  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&none     &none   &none   &trans  &trans  &trans                  &trans  &trans  &trans  &none   &none   &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
