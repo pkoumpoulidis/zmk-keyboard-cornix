@@ -54,7 +54,7 @@
          * Hold: LSHIFT
          */
 
-        lt140: layer_tap_140 {
+        lt_140: layer_tap_140 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             bindings = <&mo>, <&kp>;
