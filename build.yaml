@@ -27,7 +27,7 @@ include:
   #   snippet: studio-rpc-usb-uart
   #   artifact-name: cornix_dongle_zds_nano
   - board: cornix_left//zmk
-    cmake-args: -DCONFIG_BT_CTLR_PHY_2M=n
+    cmake-args: -DCONFIG_BT_CTLR_PHY_2M=n -DCONFIG_BT_CTLR_TX_PWR_PLUS_8=y
     shield: cornix_indicator
     artifact-name: cornix_left_default_nosd
 
@@ -36,7 +36,7 @@ include:
     artifact-name: cornix_left_for_dongle_nosd
 
   - board: cornix_right//zmk
-    cmake-args: -DCONFIG_BT_CTLR_PHY_2M=n
+    cmake-args: -DCONFIG_BT_CTLR_PHY_2M=n -DCONFIG_BT_CTLR_TX_PWR_PLUS_8=y
     shield: cornix_indicator
     artifact-name: cornix_right_nosd
 
