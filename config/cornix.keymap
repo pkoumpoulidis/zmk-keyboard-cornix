@@ -159,6 +159,43 @@
         };
     };
 
+    macros {
+        language_change_win: language_change_win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(SPACE)>;
+            label = "LANGUAGE_CHANGE_WIN";
+        };
+
+        language_change_alt: language_change_alt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(LEFT_SHIFT)>;
+            label = "LANGUAGE_CHANGE_ALT";
+        };
+
+        delphi_assign: delphi_assign {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp COLON &kp EQUAL>;
+            label = "DELPHI_ASSIGN";
+        };
+
+        code_suggestions: code_suggestions {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(SPACE)>;
+            label = "CODE_SUGGESTIONS";
+        };
+
+        cmd_palette: cmd_palette {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LA(SPACE))>;
+            label = "CMD_PALETTE";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
