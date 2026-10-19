@@ -224,10 +224,10 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESCAPE    &kp Q  &kp W  &kp E                       &kp R              &kp T                          &kp Y      &kp U  &kp I               &kp O    &kp P     &kp BSLH
-&kp MINUS     &kp A  &kp S  &kp D                       &kp F              &kp G                          &kp H      &none  &none               &none    &none     &kp SQT
-&kp LEFT_GUI  &kp Z  &kp X  &kp C                       &kp V              &kp B            &none  &none  &kp N      &kp M  &kp COMMA           &kp DOT  &kp FSLH  &kp BACKSPACE
-&none         &none  &none  &ht_150 LEFT_SHIFT LS(TAB)  &ht_150 LCTRL TAB  &lt_150 1 SPACE                &kp ENTER  &mo 3  &lt140 2 BACKSPACE  &none    &none     &none
+&kp ESCAPE    &kp Q  &kp W  &kp E                       &kp R              &kp T                          &kp Y                &kp U                     &kp I                    &kp O    &kp P          &kp BSLH
+&kp MINUS     &kp A  &kp S  &kp D                       &kp F              &kp G                          &kp H                &kp J                     &kp K                    &kp L    &kp SEMICOLON  &kp SQT
+&kp LEFT_GUI  &kp Z  &kp X  &kp C                       &kp V              &kp B            &none  &none  &kp N                &kp M                     &kp COMMA                &kp DOT  &kp FSLH       &language_change_win
+&none         &none  &none  &ht_150 LEFT_SHIFT LS(TAB)  &ht_150 LCTRL TAB  &lt_150 1 SPACE                &lt_150 2 BACKSPACE  &ht_150 LEFT_SHIFT ENTER  &ht_150 LEFT_ALT DELETE  &none    &none          &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -285,10 +285,10 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&trans  &kp F12  &kp F1  &kp F2  &kp F3  &trans                  &trans  &trans  &trans  &trans      &bt BT_DISC 0  &bt BT_SEL 0
-&trans  &kp F10  &kp F4  &kp F5  &kp F6  &trans                  &trans  &trans  &trans  &trans      &bt BT_DISC 1  &bt BT_SEL 1
-&trans  &kp F11  &kp F7  &kp F8  &kp F9  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &bt BT_DISC 2  &bt BT_SEL 2
-&trans  &trans   &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &bt BT_CLR  &bt BT_DISC 3  &bt BT_SEL 3
+&trans  &kp F12  &kp F1  &kp F2  &kp F3  &trans                  &trans  &trans      &trans            &trans      &bt BT_DISC 0  &bt BT_SEL 0
+&trans  &kp F10  &kp F4  &kp F5  &kp F6  &trans                  &trans  &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT  &bt BT_DISC 1  &bt BT_SEL 1
+&trans  &kp F11  &kp F7  &kp F8  &kp F9  &trans  &trans  &trans  &trans  &trans      &trans            &trans      &bt BT_DISC 2  &bt BT_SEL 2
+&trans  &trans   &trans  &trans  &trans  &trans                  &trans  &trans      &trans            &bt BT_CLR  &bt BT_DISC 3  &bt BT_SEL 3
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
