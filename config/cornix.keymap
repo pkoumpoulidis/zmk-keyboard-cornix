@@ -128,6 +128,13 @@
     combos {
         compatible = "zmk,combos";
 
+        studio_unlock_combo {
+            bindings = <&studio_unlock>;
+            key-positions = <0 11>;
+            layers = <0>;
+            timeout-ms = <150>;
+        };
+
         cb_ltm {
             bindings = <&kp ESC>;
             key-positions = <2 4>;
